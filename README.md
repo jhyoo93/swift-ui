@@ -1,19 +1,17 @@
-# Demo Project
+# iOS앱 개발 딥다이브
 
 ### SwiftUI 아키텍처
 
 📌 SwiftUI 앱 계층 구조   
 <img width="618" height="253" alt="image" src="https://github.com/user-attachments/assets/85cee8e6-b059-4301-8f8c-690906413657" />   
-
-- SwiftUI 애플리케이셔의 구조를 살펴볼 때 일반적인 계층 구조를 시각적으로 보는 것이 도움이 된다
-
-
-📌 App
-- App 객체는 SwiftUI 애플리케이션 구조 내 최상위 요소이며 애플리케이션의 실행 중인 각 인스턴스의 시작 및 생명 주기를 처리한다.
-  또한 APP 요소는 애플리케이션의 사용자 인터페이스를 구성하는 다양한 Scene을 관리하는 역할을 한다. 애플리케이션에는 하나의 App 인스턴스만 포함된다.
-
-📌 Scene
-
-📌 View
+  
+- App → 앱의 진입점, 생명주기와 Scene 관리 (앱당 1개)  
+- Scene → 화면 단위 영역, iOS/watchOS는 주로 전체 화면, iPadOS/macOS는 다중 Scene 가능  
+- View → UI의 기본 빌딩 블록 (버튼, 텍스트 등). 단일 요소 또는 다른 뷰를 감싸는 컨테이너 형태  
+  
+📌 구조 및 특징
+- App → Scene → View 계층 구조  
+- View는 재사용 가능하며, 조합을 통해 유연한 UI 설계 가능  
+- SwiftUI는 선언형 문법으로 UI 상태와 데이터 변화를 자동 반영  
 
   
