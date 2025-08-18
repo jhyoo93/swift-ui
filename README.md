@@ -1,6 +1,6 @@
-# iOS앱
+# iOS - SwiftUI
 
-🌱 ### SwiftUI 아키텍처  
+### 🌱 SwiftUI 아키텍처  
 
 📌 앱 계층 구조   
 <img width="618" height="253" alt="image" src="https://github.com/user-attachments/assets/85cee8e6-b059-4301-8f8c-690906413657" />   
