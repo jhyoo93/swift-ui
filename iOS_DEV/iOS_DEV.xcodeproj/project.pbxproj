@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		78EFD0832E534FD800AF2D0C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78EFD0822E534FD800AF2D0C /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		78AF0D9E2E53247C00D0E54B /* iOS_DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_DEV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78AF0D9E2E53247C00D0E54B /* iOS_DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iOS_DEV.app; path = "/Users/yujaehwan/Documents/GitHub/iOS_DEV/iOS_DEV/build/Debug-iphoneos/iOS_DEV.app"; sourceTree = "<absolute>"; };
+		78EFD0822E534FD800AF2D0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +38,8 @@
 			isa = PBXGroup;
 			children = (
 				78AF0DA02E53247C00D0E54B /* iOS_DEV */,
-				78AF0D9F2E53247C00D0E54B /* Products */,
+				78EFD0822E534FD800AF2D0C /* README.md */,
 			);
-			sourceTree = "<group>";
-		};
-		78AF0D9F2E53247C00D0E54B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78AF0D9E2E53247C00D0E54B /* iOS_DEV.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +92,7 @@
 			mainGroup = 78AF0D952E53247C00D0E54B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 78AF0D9F2E53247C00D0E54B /* Products */;
+			productRefGroup = 78AF0D952E53247C00D0E54B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -109,6 +106,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EFD0832E534FD800AF2D0C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
