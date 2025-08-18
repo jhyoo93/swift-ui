@@ -5,7 +5,7 @@
 📌 앱 계층 구조   
   
 <img width="618" height="253" alt="image" src="https://github.com/user-attachments/assets/85cee8e6-b059-4301-8f8c-690906413657" />   
-
+  
 📌 구성 요소   
 - App → 앱의 진입점, 생명주기와 Scene 관리 (앱당 1개)  
 - Scene → 화면 단위 영역, iOS/watchOS는 주로 전체 화면, iPadOS/macOS는 다중 Scene 가능    
