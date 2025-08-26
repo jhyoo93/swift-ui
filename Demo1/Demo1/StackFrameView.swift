@@ -10,7 +10,7 @@ import SwiftUI
 // SwiftUI 스택과 프레임
 // SwiftUI는 VStack(수직),HStack(수평), ZStack(중첩)
 // 형태인 3개의 스택 레이아웃뷰를 제공한다.
-struct ContentView: View {
+struct StackFrameView: View {
     // Spacer, alignment, padding
     // 뷰 사이에 공간을 추가하기 위한 Spacer 컴포넌트를 가지고 있다.
     // 스택의 정렬은 스택이 선언될 때 값을 지정한다.
@@ -48,5 +48,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    StackFrameView()
 }
