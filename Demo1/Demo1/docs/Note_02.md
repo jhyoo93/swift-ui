@@ -79,3 +79,91 @@ struct ContentView: View {
 ```
 - @MainActor가 붙은 메서드 → UI Thread(Main Thread)에서 안전하게 실행.
 - SwiftUI 내부의 @State, @Binding, @Published 프로퍼티 업데이트는 대부분 MainActor 아래에서 동작.
+
+## 3) Concurrency (동시성)
+
+### 3.1 개념
+- 동시성 = 여러 작업을 동시에 진행하는 것처럼 실행
+- Swift는 async / await / Task 키워드로 지원
+- 코드가 꼬이지 않도록 **구조적 동시성**을 제공
+
+### 3.2 주요 키워드
+- async → 함수가 비동기로 동작한다는 표시
+- await → 비동기 함수를 실행할 때 “결과를 기다린다”
+- Task { } → 새로운 비동기 작업 시작
+- async let → 동시에 여러 작업 실행
+
+```swift
+
+func fetchUser() async -> String {
+    return "유저 데이터"
+}
+
+func fetchPosts() async -> [String] {
+    return ["글1", "글2"]
+}
+
+Task {
+    async let user = fetchUser()
+    async let posts = fetchPosts()
+    
+    let (u, p) = await (user, posts)
+    print(u)  // "유저 데이터"
+    print(p)  // ["글1", "글2"]
+}
+
+```
+
+## 4) Lifecycle Events (생명주기 이벤트)
+
+### 4.1 View 생명주기
+- **.onAppear** → 뷰가 나타날 때 실행
+- **..onDisappear** → 뷰가 사라질 때 실행
+- **.task** → 뷰가 나타날 때 비동기 작업 실행
+
+```swift
+
+struct DetailView: View {
+    var body: some View {
+        Text("상세화면")
+            .onAppear {
+                print("나타남")
+            }
+            .onDisappear {
+                print("사라짐")
+            }
+            .task {
+                await loadData()
+            }
+    }
+    
+    func loadData() async {
+        print("데이터 로드")
+    }
+}
+
+```
+
+### 4.2 ScenePhase(앱 상태)
+- 앱 전체 상태(활성, 비활성, 백그라운드) 감지 가능
+- **@Environment(\.scenePhase)** 사용
+
+```swift
+
+struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    
+    var body: some View {
+        Text("Hello")
+            .onChange(of: scenePhase) { phase in
+                switch phase {
+                case .active: print("앱 활성")
+                case .inactive: print("앱 비활성")
+                case .background: print("앱 백그라운드")
+                @unknown default: break
+                }
+            }
+    }
+}
+
+```
